@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import cv2 as cv
 import numpy as np
 
@@ -77,7 +75,7 @@ cv.namedWindow('img_result')
 cv.createTrackbar('threshold', 'img_result', 0, 255, nothing)
 cv.setTrackbarPos('threshold', 'img_result', 30)
 
-cap = cv.VideoCapture(0)
+cap = cv.VideoCapture(1)
     
     
 while(True):
@@ -128,7 +126,9 @@ while(True):
      frame_add = cv.addWeighted(img_color, 0.9, img_result, 0.3, 0)
      
      cv.imshow('img_color', img_color)
-     
+     cv.imshow('frame_add', frame_add)
+     cv.imshow('img_result', img_result)
+     cv.imshow('img_mask', img_mask)
 
 
     # ESC 키누르면 종료
